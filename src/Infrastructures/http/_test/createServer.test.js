@@ -15,6 +15,23 @@ describe('HTTP server', () => {
     expect(response.statusCode).toEqual(404);
   });
 
+  it('should still start when ACCESS_TOKEN_AGE is not set', async () => {
+    // Arrange
+    const originalAge = process.env.ACCESS_TOKEN_AGE;
+    delete process.env.ACCESS_TOKEN_AGE;
+
+    // Action
+    const server = await createServer({});
+    process.env.ACCESS_TOKEN_AGE = originalAge;
+
+    // Assert
+    const response = await server.inject({
+      method: 'GET',
+      url: '/unregisteredRoute',
+    });
+    expect(response.statusCode).toEqual(404);
+  });
+
   it('should handle server error correctly', async () => {
     // Arrange
     const requestPayload = {
