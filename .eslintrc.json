@@ -15,6 +15,6 @@
     "class-methods-use-this": "off",
     "max-len": "off",
     "no-console": "off",
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "unix"]
   }
 }
