@@ -1,8 +1,8 @@
 {
   "name": "forum-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "RESTful forum API (threads, comments, replies, likes) built with Hapi, PostgreSQL and Clean Architecture",
+  "main": "src/app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/app.js",
     "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
@@ -15,9 +15,28 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "forum",
+    "rest-api",
+    "hapi",
+    "postgresql",
+    "clean-architecture",
+    "jwt",
+    "jest"
+  ],
+  "author": "Dedy Irama (https://github.com/dedyirama-id)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dedyirama-id/forum-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dedyirama-id/forum-api/issues"
+  },
+  "homepage": "https://github.com/dedyirama-id/forum-api#readme",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@hapi/hapi": "^20.1.5",
     "@hapi/jwt": "^2.0.1",

@@ -23,6 +23,6 @@ jobs:
 
             cd ~/forum-api-new
             git pull origin main
-            npm install
+            npm ci
             npm run migrate up
             pm2 restart forumapi

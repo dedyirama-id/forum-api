@@ -1,6 +1,6 @@
 const CommentsTableTestHelper = require('../../../../tests/CommentsTableTestHelper');
 const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
-const UserCommentLikesTableTestHelper = require('../../../../tests/UserCommentLlikesTableTestHelper');
+const UserCommentLikesTableTestHelper = require('../../../../tests/UserCommentLikesTableTestHelper');
 const UsersTableTestHelper = require('../../../../tests/UsersTableTestHelper');
 const AuthorizationError = require('../../../Commons/exceptions/AuthorizationError');
 const NotFoundError = require('../../../Commons/exceptions/NotFoundError');
