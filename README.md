@@ -3,11 +3,9 @@
 [![Continuous Integration](https://github.com/dedyirama-id/forum-api/actions/workflows/ci.yml/badge.svg)](https://github.com/dedyirama-id/forum-api/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-A RESTful back-end for a discussion forum: users register, log in with JWT, start threads, comment, reply to comments, and like comments. It is built with **Hapi** and **PostgreSQL**, follows **Clean Architecture**, and is covered by unit, integration, and functional tests. It also ships with a CI/CD pipeline to a VPS behind nginx.
+A RESTful back-end for a discussion forum: users register, log in with JWT, start threads, comment, reply to comments, and like comments. It is built with **Hapi** and **PostgreSQL**, follows **Clean Architecture**, and is covered by unit, integration, and functional tests. It also ships with a CI/CD pipeline that deployed it to a VPS behind nginx.
 
 > Final project for the Dicoding course *Menjadi Back-End Developer Expert dengan JavaScript*.
-
-**Live API:** https://forumapi.futrlabs.de
 
 ## Features
 
@@ -116,8 +114,10 @@ The functional API tests are a Postman collection. Run them against a running se
 
 ## Deployment
 
+> The app used to run on a VPS that has since been shut down, so there is no live instance. The setup is kept here for reference.
+
 - **CI** ([`ci.yml`](.github/workflows/ci.yml)): every pull request to `main` installs dependencies, lints, runs migrations, and runs the test suite on Node 20 and 22 against a PostgreSQL service.
-- **CD** ([`cd.yml`](.github/workflows/cd.yml)): every push to `main` connects to the server over SSH, pulls the code, installs dependencies, runs migrations, and restarts the app with PM2.
+- **CD** ([`cd.yml`](.github/workflows/cd.yml)): connects to the server over SSH, pulls the code, installs dependencies, runs migrations, and restarts the app with PM2. It used to run on every push to `main`; now it only runs when triggered manually.
 - **Reverse proxy**: nginx terminates TLS (Let's Encrypt) and rate-limits `/threads`. See [`deploy/nginx/forumapi.conf`](deploy/nginx/forumapi.conf).
 
 ## License
